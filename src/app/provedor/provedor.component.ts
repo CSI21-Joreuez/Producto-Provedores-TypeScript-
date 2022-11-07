@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Provedor } from '../Provedor';
-import { Provedores } from '../mock-provedores';
-import { Producto } from '../Producto';
 import { ProvedorService } from '../provedor.service';
 @Component({
   selector: 'app-provedor',
@@ -9,20 +7,16 @@ import { ProvedorService } from '../provedor.service';
   styleUrls: ['./provedor.component.css']
 })
 export class ProvedorComponent implements OnInit {
-
+  provedores: Provedor[] = [];
   
-  Provedores = Provedores;
-  selectedProvedor?: Provedor;
-  constructor(private ProvedorS: ProvedorService) 
-  {
 
-   }
+  constructor(public ProvedorService: ProvedorService) 
+  {}
 
   ngOnInit(): void {
-    this.getProvedor
+    this.getProvedores();
   }
-  getProvedor(): void {
-    this.ProvedorS.getProvedor()
-    .subscribe(provedores => this.Provedores = provedores);
+  getProvedores(): void {
+    this.ProvedorService.getProvedores().subscribe(provedores => this.provedores = provedores);
   }
 }

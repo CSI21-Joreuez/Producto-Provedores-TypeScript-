@@ -7,15 +7,16 @@ import { ProductoService } from '../producto.service'
   styleUrls: ['./producto.component.css']
 })
 export class ProductoComponent implements OnInit {
+  Productos: Producto[] = [];
 
-  productos = ProductoService;
-  selectedProducto?: Producto;
-
-  constructor() { }
+  constructor(private productoService: ProductoService ) { }
 
   ngOnInit(): void {
+    this.getProductos();
   }
-  onSelect(Producto: Producto): void {
-    this.selectedProducto =Producto ;
+
+  getProductos(): void {
+    this.productoService.getProductos()
+    .subscribe(Productos => this.Productos = Productos);
   }
 }

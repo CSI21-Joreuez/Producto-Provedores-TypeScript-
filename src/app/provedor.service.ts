@@ -9,9 +9,14 @@ import { Observable, of } from 'rxjs';
 export class ProvedorService {
 
   constructor() { }
-  getProvedor(): Observable<Provedor[]>
+  getProvedores(): Observable<Provedor[]>
   {
-    const producto = of(Provedores);
-    return producto
+    const Provedor = of(Provedores);
+    return Provedor
+  }
+  getProvedor(id: number): Observable<Provedor> {
+
+    const Provedor = Provedores.find(h => h.id === id)!;
+    return of(Provedor);
   }
 }

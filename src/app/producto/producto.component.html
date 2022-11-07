@@ -1,10 +1,6 @@
 <h2>Lista De Productos</h2>
-
-<ol class="heroes">
-  <li *ngFor="let Producto of productos">
-    <a routerLink="/producto-details/{{Producto.id}}"></a>
-    <span class="name">{{Producto.nombre}}</span>
+<ul>
+  <li *ngFor="let Producto of Productos">
+    <a routerLink="/producto-detail/{{Producto.id}}"><span class="badge">{{Producto.id}}</span> {{Producto.nombre}}  </a>
   </li>
-</ol>
-
-<app-producto-detail [Producto]="selectedProducto"></app-producto-detail>
+</ul>

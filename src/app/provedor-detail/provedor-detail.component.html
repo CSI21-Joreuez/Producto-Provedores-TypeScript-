@@ -1,10 +1,9 @@
-<div *ngIf="Provedor">
-
-    <h2>{{Provedor.nombre | uppercase}} Details</h2>
-    <div><span>Id: </span>{{Provedor.id}} </div>
+<div *ngIf="provedor">
+    <h2>{{provedor.nombre | uppercase}} Details</h2>
+    <div><span>Id: </span>{{provedor.id}} </div>
     <div>
-      <label for="Provedor-nombre">Provedor Nombre: </label>
-      <input id="Provedor-nombre" [(ngModel)]="Provedor.nombre" placeholder="nombre">
+      <label for="provedor-nombre">Nombre Del Provedor: </label>
+      <input id="provedor-nombre" [(ngModel)]="provedor.nombre" placeholder="Nombre Del Provedor:">
     </div>
-  
+    <button type="button" (click)="goBack()">Retroceder</button>
   </div>

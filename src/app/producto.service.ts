@@ -8,9 +8,15 @@ import { Observable, of } from 'rxjs';
 export class ProductoService {
 
   constructor() { }
-  getProducto(): Observable<Producto[]>
+  getProductos(): Observable<Producto[]>
   {
     const producto = of(Catalogo);
     return producto
   }
+  
+  getProducto(id: number): Observable<Producto> {
+    const Producto = Catalogo.find(h => h.id === id)!;
+    return of(Producto);
+  }
 }
+
