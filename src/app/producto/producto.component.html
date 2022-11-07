@@ -1,0 +1,10 @@
+<h2>Lista De Productos</h2>
+
+<ol class="heroes">
+  <li *ngFor="let Producto of productos">
+    <a routerLink="/producto-details/{{Producto.id}}"></a>
+    <span class="name">{{Producto.nombre}}</span>
+  </li>
+</ol>
+
+<app-producto-detail [Producto]="selectedProducto"></app-producto-detail>

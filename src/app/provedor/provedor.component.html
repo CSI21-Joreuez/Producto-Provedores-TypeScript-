@@ -1,0 +1,9 @@
+<h2>Lista De Provedores</h2>
+<ol class="heroes">
+  <li *ngFor="let Provedor of Provedores">
+    <a routerLink="/provedores-details/{{Provedor.id}}"></a>
+      <span class="name">{{Provedor.nombre}}</span>
+  </li>
+</ol>
+
+
