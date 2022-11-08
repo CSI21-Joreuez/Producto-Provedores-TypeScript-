@@ -11,23 +11,12 @@ import { ProductoService } from '../producto.service';
   styleUrls: ['./producto-detail.component.css']
 })
 export class ProductoDetailComponent implements OnInit {
-  Producto: Producto | undefined;
-  constructor(
-    private route: ActivatedRoute,
-    private productoService: ProductoService,
-    private location: Location
-  ) {}
+
+  @Input() Producto?: Producto
+  constructor() {}
 
   ngOnInit(): void {
-    this.getProducto();
-  }
-  getProducto(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.productoService.getProducto(id)
-      .subscribe(Producto => this.Producto = Producto);
   }
 
-  goBack(): void {
-    this.location.back();
-  }
+
 }

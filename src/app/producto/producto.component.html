@@ -1,6 +1,7 @@
 <h2>Lista De Productos</h2>
 <ul>
-  <li *ngFor="let Producto of Productos">
-    <a routerLink="/producto-detail/{{Producto.id}}"><span class="badge">{{Producto.id}}</span> {{Producto.nombre}}  </a>
+  <li *ngFor="let Producto of Productos" (click) ="selectProd(Producto)">
+    <button><span class="badge">{{Producto.id}}</span> {{Producto.nombre}}</button>
   </li>
 </ul>
+<app-producto-detail [Producto]="productoSeleccionado"></app-producto-detail>

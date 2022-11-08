@@ -3,7 +3,18 @@
     <div><span>Id: </span>{{provedor.id}} </div>
     <div>
       <label for="provedor-nombre">Nombre Del Provedor: </label>
+      
       <input id="provedor-nombre" [(ngModel)]="provedor.nombre" placeholder="Nombre Del Provedor:">
+      <br>
+      <span>Telefono: {{provedor.movil}}</span>
+      <br>
+      <span>Email: {{provedor.email}}</span>
+      <br>
+      <span>Compañia: {{provedor.contacto}}</span>
+      <br>
+      <span>Direccion: {{provedor.direccion}}</span>
+
+
     </div>
     <button type="button" (click)="goBack()">Retroceder</button>
   </div>

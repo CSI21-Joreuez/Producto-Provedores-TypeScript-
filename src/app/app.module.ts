@@ -7,14 +7,16 @@ import { ProductoComponent } from './producto/producto.component';
 import { FormsModule } from '@angular/forms';
 import { ProvedorComponent } from './provedor/provedor.component';
 import { ProvedorDetailComponent } from './provedor-detail/provedor-detail.component';
-import { ProductoDetailComponent } from './producto-detail/producto-detail.component'; // <-- NgModel lives here
+import { ProductoDetailComponent } from './producto-detail/producto-detail.component';
+import { MenuComponent } from './menu/menu.component'; // <-- NgModel lives here
 @NgModule({
   declarations: [
     AppComponent,
     ProductoComponent,
     ProvedorComponent,
     ProvedorDetailComponent,
-    ProductoDetailComponent
+    ProductoDetailComponent,
+    MenuComponent
     
   ],
   imports: [

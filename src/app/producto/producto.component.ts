@@ -8,6 +8,7 @@ import { ProductoService } from '../producto.service'
 })
 export class ProductoComponent implements OnInit {
   Productos: Producto[] = [];
+  productoSeleccionado?: Producto;
 
   constructor(private productoService: ProductoService ) { }
 
@@ -16,7 +17,9 @@ export class ProductoComponent implements OnInit {
   }
 
   getProductos(): void {
-    this.productoService.getProductos()
-    .subscribe(Productos => this.Productos = Productos);
+    this.Productos = this.productoService.getProductos();
+  }
+  selectProd(prod: Producto): void {
+  this.productoSeleccionado = prod;
   }
 }

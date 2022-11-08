@@ -7,16 +7,16 @@ import { Observable, of } from 'rxjs';
 })
 export class ProductoService {
 
-  constructor() { }
-  getProductos(): Observable<Producto[]>
+  private productos: Producto[] = [];
+
+  constructor() {
+    this.productos = Catalogo
+   }
+   
+  getProductos():Producto[]
   {
-    const producto = of(Catalogo);
-    return producto
+    return this.productos;
   }
-  
-  getProducto(id: number): Observable<Producto> {
-    const Producto = Catalogo.find(h => h.id === id)!;
-    return of(Producto);
-  }
+
 }
 
